@@ -1,0 +1,8 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:daydarkln/frontend-project-lvl1.git",
+  "author": "Egor Zholnin <ezholnin@devexperts.com>",
+  "license": "MIT"
+}
