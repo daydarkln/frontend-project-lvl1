@@ -1,8 +1,12 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "bin/brain-games.js",
   "repository": "git@github.com:daydarkln/frontend-project-lvl1.git",
   "author": "Egor Zholnin <ezholnin@devexperts.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  }
 }
