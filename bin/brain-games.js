@@ -1,3 +1,3 @@
-import { greating } from '../src/cli.js';
+import greating from '../src/cli.js';
 
 greating();
