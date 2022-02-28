@@ -2,3 +2,4 @@
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/daydarkln/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/daydarkln/frontend-project-lvl1/actions)
+[![lint](https://github.com/daydarkln/frontend-project-lvl1/actions/workflows/lint.yml/badge.svg)](https://github.com/daydarkln/frontend-project-lvl1/actions/workflows/lint.yml)
