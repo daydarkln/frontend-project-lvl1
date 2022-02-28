@@ -7,4 +7,4 @@ jobs:
       - name: install modules
         run: yarn
       - name: eslint
-        run: make lint
+        run: yarn lint
