@@ -1,5 +1,5 @@
 install:
-	npm ci
+	yarn install --frozen-lockfile
 
 publish:
 	npm publish --dry-run
