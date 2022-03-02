@@ -1,3 +1,4 @@
-import greating from '../src/cli.js';
+#!/usr/bin/env node
+import cli from '../src/cli.js';
 
-greating();
+cli.greating();
