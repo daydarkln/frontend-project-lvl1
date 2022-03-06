@@ -6,11 +6,24 @@ const { createGame } = gameUtils;
 const { randomRange } = mathUtils;
 const { GAME_ROUNDS, GCD_RULES } = config;
 
+const getGcd = (first, second) => {
+  let a = first;
+  let b = second;
+  while (a !== b) {
+    if (a > b) {
+      a -= b;
+    } else {
+      b -= a;
+    }
+  }
+  return a;
+};
+
 const getQuestionWithAnswer = () => {
-  const [a, b] = [randomRange(1, 10), randomRange(1, 10)];
+  const [a, b] = [randomRange(1, 100), randomRange(1, 100)];
 
   const question = `${a} ${b}`;
-  const answer = String(a % b);
+  const answer = String(getGcd(a, b));
 
   return {
     question,
