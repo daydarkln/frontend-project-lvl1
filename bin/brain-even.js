@@ -4,10 +4,11 @@ import readlineSync from 'readline-sync';
 import cli from '../src/cli.js';
 import utils from '../src/utils/math.utils.js';
 import config from '../src/config.js';
+import gameUtils from '../src/utils/game.utils.js';
 
-const { greating } = cli;
+const { createGame } = gameUtils;
 const {
-  ERROR_MESSAGE_EVEN, ERROR_MESSAGE_ODD, ERROR_MESSAGE_INCORRECT, EVEN_ODD_RULES,
+  ERROR_MESSAGE_EVEN, ERROR_MESSAGE_ODD, ERROR_MESSAGE_INCORRECT, EVEN_ODD_RULES, GAME_ROUNDS,
 } = config;
 
 // local consts
@@ -59,27 +60,9 @@ const askIsEven = () => {
   return true;
 };
 
-const askIsEvenTimes = (count) => {
-  let result;
-  // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < count; i++) {
-    result = askIsEven();
-    if (!result) {
-      i = count + 1;
-    }
-  }
-  return result;
-};
+createGame({
+  gameLogic: askIsEven,
+  rules: EVEN_ODD_RULES,
+  rounds: GAME_ROUNDS,
+});
 
-// game
-const checkEvenOdd = () => {
-  greating();
-
-  console.log(EVEN_ODD_RULES);
-  const result = askIsEvenTimes(3);
-  if (result) {
-    console.log('Congratulations! You have answered correctly all the questions');
-  }
-};
-
-checkEvenOdd();
