@@ -44,7 +44,7 @@ const createGame = ({ getQuestionWithAnswer, rules, rounds }) => () => {
   console.log(rules);
   const result = runGameTimes(getQuestionWithAnswer, rounds);
   if (result) {
-    console.log('Congratulations! You have answered correctly all the questions');
+    console.log('Congratulations,', name);
   }
 };
 
