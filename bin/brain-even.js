@@ -29,7 +29,8 @@ const logError = (message) => {
   console.log("Let's try again,", store.userName);
 };
 
-const askIsEven = () => {
+const askIsEven = (name) => () => {
+  store.userName = name;
   const randomValue = utils.randomRange(0, 100);
   const ask = {
     question: randomValue,
