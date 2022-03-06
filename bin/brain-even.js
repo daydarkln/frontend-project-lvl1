@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
-import cli from '../src/cli.js';
 import utils from '../src/utils/math.utils.js';
 import config from '../src/config.js';
 import gameUtils from '../src/utils/game.utils.js';
@@ -65,4 +64,3 @@ createGame({
   rules: EVEN_ODD_RULES,
   rounds: GAME_ROUNDS,
 });
-
