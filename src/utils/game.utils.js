@@ -8,7 +8,7 @@ const store = {
 
 const logError = (message) => {
   console.log(message);
-  console.log("Let's try again,", store.userName);
+  console.log(`Let's try again, ${store.userName}!`);
 };
 
 const { greating } = cli;
