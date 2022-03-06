@@ -37,7 +37,7 @@ const runGameTimes = (getQuestionWithAnswer, count) => {
   return result;
 };
 
-const createGame = ({ getQuestionWithAnswer, rules, rounds }) => {
+const createGame = ({ getQuestionWithAnswer, rules, rounds }) => () => {
   const name = greating();
   store.userName = name;
 
