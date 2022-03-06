@@ -15,7 +15,7 @@ const getQuestionWithAnswer = () => {
 
   const questionPosition = randomRange(1, length - 1);
   const answer = String(progression.splice(questionPosition, 1, '..'));
-  const question = progression.join(', ');
+  const question = progression.join(' ');
 
   return {
     question,
