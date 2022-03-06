@@ -10,7 +10,7 @@ const { GAME_ROUNDS, PROGRESSION_RULES } = config;
 const arithmeticProgression = (first, step, length) => Array.from({ length }, (_, index) => (index + step) * first);
 
 const getQuestionWithAnswer = () => {
-  const length = randomRange(5, 10);
+  const length = randomRange(6, 10);
   const progression = arithmeticProgression(randomRange(1, 5), randomRange(1, 5), length);
 
   const questionPosition = randomRange(1, length - 1);
