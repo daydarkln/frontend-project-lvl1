@@ -1,5 +1,4 @@
-import readlineSync from 'readline-sync';
-
+#!/usr/bin/env node
 import gameUtils from '../src/utils/game.utils.js';
 import mathUtils from '../src/utils/math.utils.js';
 import config from '../src/config.js';
@@ -7,15 +6,6 @@ import config from '../src/config.js';
 const { createGame } = gameUtils;
 const { randomRange } = mathUtils;
 const { GAME_ROUNDS, PROGRESSION_RULES } = config;
-
-const store = {
-  userName: null,
-};
-
-const logError = (message) => {
-  console.log(message);
-  console.log("Let's try again,", store.userName);
-};
 
 // eslint-disable-next-line max-len
 const arithmeticProgression = (first, step, length) => Array.from({ length }, (_, index) => (index + step) * first);
@@ -34,20 +24,8 @@ const getQuestionWithAnswer = () => {
   };
 };
 
-const askGcd = (name) => () => {
-  store.userName = name;
-  const { question, answer } = getQuestionWithAnswer();
-  console.log('Question:', question);
-  const input = readlineSync.question('Your answer: ');
-  if (Number(input) === Number(answer)) {
-    return true;
-  }
-  logError(`'${input}' is wrong answer ;(. Correct answer was '${answer}'.`);
-  return false;
-};
-
 createGame({
-  gameLogic: askGcd,
+  getQuestionWithAnswer,
   rules: PROGRESSION_RULES,
   rounds: GAME_ROUNDS,
 });

@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-
 import gameUtils from '../src/utils/game.utils.js';
 import mathUtils from '../src/utils/math.utils.js';
 import config from '../src/config.js';
@@ -8,15 +6,6 @@ import config from '../src/config.js';
 const { GAME_ROUNDS, CALC_RULES } = config;
 const { createGame } = gameUtils;
 const { randomRange } = mathUtils;
-
-const store = {
-  userName: null,
-};
-
-const logError = (message) => {
-  console.log(message);
-  console.log("Let's try again,", store.userName);
-};
 
 const getQuestionWithAnswer = () => {
   const operators = {
@@ -46,20 +35,8 @@ const getQuestionWithAnswer = () => {
   };
 };
 
-const askCalc = (name) => () => {
-  store.userName = name;
-  const { question, answer } = getQuestionWithAnswer();
-  console.log('Question:', question);
-  const input = readlineSync.question('Your answer: ');
-  if (Number(input) === answer) {
-    return true;
-  }
-  logError(`'${input}' is wrong answer ;(. Correct answer was '${answer}'.`);
-  return false;
-};
-
 createGame({
-  gameLogic: askCalc,
+  getQuestionWithAnswer,
   rules: CALC_RULES,
   rounds: GAME_ROUNDS,
 });
