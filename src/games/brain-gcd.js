@@ -7,7 +7,7 @@ const { randomRange } = mathUtils;
 const { GAME_ROUNDS, GCD_RULES } = config;
 
 const getQuestionWithAnswer = () => {
-  const [a, b] = [randomRange(0, 10), randomRange(0, 10)];
+  const [a, b] = [randomRange(1, 10), randomRange(1, 10)];
 
   const question = `${a} ${b}`;
   const answer = String(a % b);
