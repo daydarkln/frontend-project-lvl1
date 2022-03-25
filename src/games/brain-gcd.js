@@ -1,10 +1,9 @@
-import gameUtils from '../utils/game.utils.js';
+import gameUtils from '../engine/index.js';
 import mathUtils from '../utils/math.utils.js';
-import config from '../config.js';
 
 const { createGame } = gameUtils;
 const { randomRange } = mathUtils;
-const { GAME_ROUNDS, GCD_RULES } = config;
+const GCD_RULES = 'Find the greatest common divisor of given numbers.';
 
 const getGcd = (first, second) => {
   let a = first;
@@ -31,10 +30,9 @@ const getQuestionWithAnswer = () => {
   };
 };
 
-const brainGcd = createGame({
+const brainGcd = createGame(
   getQuestionWithAnswer,
-  rules: GCD_RULES,
-  rounds: GAME_ROUNDS,
-});
+  GCD_RULES,
+);
 
 export default brainGcd;

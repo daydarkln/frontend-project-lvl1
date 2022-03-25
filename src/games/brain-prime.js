@@ -1,10 +1,9 @@
-import gameUtils from '../utils/game.utils.js';
+import gameUtils from '../engine/index.js';
 import mathUtils from '../utils/math.utils.js';
-import config from '../config.js';
 
 const { createGame } = gameUtils;
 const { randomRange, isPrime } = mathUtils;
-const { GAME_ROUNDS, PRIME_RULES } = config;
+const PRIME_RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const getQuestionWithAnswer = () => {
   const question = randomRange(1, 100);
@@ -16,10 +15,9 @@ const getQuestionWithAnswer = () => {
   };
 };
 
-const brainPrime = createGame({
+const brainPrime = createGame(
   getQuestionWithAnswer,
-  rules: PRIME_RULES,
-  rounds: GAME_ROUNDS,
-});
+  PRIME_RULES,
+);
 
 export default brainPrime;

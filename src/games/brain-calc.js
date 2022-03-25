@@ -1,8 +1,7 @@
-import gameUtils from '../utils/game.utils.js';
+import gameUtils from '../engine/index.js';
 import mathUtils from '../utils/math.utils.js';
-import config from '../config.js';
 
-const { GAME_ROUNDS, CALC_RULES } = config;
+const CALC_RULES = 'What is the result of the expression?';
 const { createGame } = gameUtils;
 const { randomRange } = mathUtils;
 
@@ -34,10 +33,9 @@ const getQuestionWithAnswer = () => {
   };
 };
 
-const brainCalc = createGame({
+const brainCalc = createGame(
   getQuestionWithAnswer,
-  rules: CALC_RULES,
-  rounds: GAME_ROUNDS,
-});
+  CALC_RULES,
+);
 
 export default brainCalc;

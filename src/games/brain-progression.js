@@ -1,10 +1,9 @@
-import gameUtils from '../utils/game.utils.js';
+import gameUtils from '../engine/index.js';
 import mathUtils from '../utils/math.utils.js';
-import config from '../config.js';
 
 const { createGame } = gameUtils;
 const { randomRange } = mathUtils;
-const { GAME_ROUNDS, PROGRESSION_RULES } = config;
+const PROGRESSION_RULES = 'What number is missing in the progression?';
 
 // eslint-disable-next-line max-len
 const arithmeticProgression = (first, step, length) => Array.from({ length }, (_, index) => (index + step) * first);
@@ -23,10 +22,9 @@ const getQuestionWithAnswer = () => {
   };
 };
 
-const brainProgression = createGame({
+const brainProgression = createGame(
   getQuestionWithAnswer,
-  rules: PROGRESSION_RULES,
-  rounds: GAME_ROUNDS,
-});
+  PROGRESSION_RULES,
+);
 
 export default brainProgression;
